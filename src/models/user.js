@@ -1,16 +1,22 @@
 const mongoose=require('mongoose')
 const userSchema=new mongoose.Schema({
-    firstName:String,
-    lastName:String,
+    firstName:{
+        type:String,
+    },
+    lastName:{
+        type:String,
+    },
     email:{
         type:String,
     },
-    password:String,
+    password:{
+        type:String,
+    },
     age:{
         type:Number,
     },
     gender:{
-        type:Number,
+        type:String,
     }
 })
 const User=mongoose.model("User",userSchema)
