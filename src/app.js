@@ -1,15 +1,12 @@
 const express=require('express')
 const app=express()
 
-app.use("/test",(req,res)=>{
-    res.send("hello hii")
-})
-app.get("/user/:id",(req,res)=>{
-    const res1=req.params
-    console.log(res1)    
-    res.send({"name":"yash","age":"20"})
-})
 
+const {adminAuth}=require("./middlewares/auth")
+app.use("/admin",adminAuth)
+app.get("/admin/data",(req,res)=>{
+    res.send("admin data")
+})
 app.post("/user",(req,res)=>{
     res.send("save data to db")
 })
