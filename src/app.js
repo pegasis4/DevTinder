@@ -42,6 +42,35 @@ app.get("/user",async (req,res)=>{
         res.send("something went wrong")
     }
 })
+app.delete("/user",async (req,res)=>{
+    const id=req.body.id
+    const userr=await User.findById(id)
+    if(userr.length===0){
+        res.send("no user exists with given id")
+    }
+    else{
+        try{
+            await User.findByIdAndDelete(id)
+            res.send("user deleted successfully")
+        }
+        catch(err){
+            console.log(err)
+            res.send("something went wrong")
+        }
+    }
+
+})
+app.patch("/user",async (req,res)=>{
+   const id=req.body.id
+   const data=req.body
+   try{
+    await User.findByIdAndUpdate(id,data)
+    res.send("user updated successfully")
+   } 
+   catch(err){
+    res.send("something went wrong")
+   }
+})
 app.post("/signup",async (req,res)=>{
     console.log(req.body)
     const userObj=req.body
