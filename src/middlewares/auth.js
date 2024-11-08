@@ -7,7 +7,6 @@ const adminAuth=(req,res,next)=>{
     else{
         res.send("unauthorized access")
     }
-
 }
 module.exports={
     adminAuth
