@@ -1,12 +1,7 @@
 const express=require('express')
 const {connectDB}=require("./config/database")
 const User=require("./models/user")
-const bcrypt=require("bcrypt")
 const cookieParser=require("cookie-parser")
-const jwt=require("jsonwebtoken")
-const {userAuth}=require("./middlewares/auth")
-const {getJWT}=require("./models/user")
-const {validatePassword}=require("./models/user")
 
 const app=express()
 

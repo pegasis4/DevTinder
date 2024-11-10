@@ -45,5 +45,15 @@ authRouter.post("/signup", async (req, res) => {
       res.status(400).send(err.message); // Sending a descriptive error to the client
     }
   });
+  authRouter.post("/logout",async(req,res)=>{
+    try{
+      res.cookie("token",null,{expiresIn:new Date(Date.now())})
+      res.send("logout successful")
+    }
+    catch(err){
+      console.log(err)
+      res.send("something went wrong")
+    }
+  })
   module.exports=authRouter
   

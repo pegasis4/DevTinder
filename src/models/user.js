@@ -50,7 +50,7 @@ const userSchema=new mongoose.Schema({
     },
     about:{
         type:String,
-        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgJDFLehkQpFnas_gqV8aGpJTzR26MIlsatrb458vJWIFM9KZpv0HXnSRsbHJ6VjLx4I&usqp=CAU",
+        default:"hey there",
     },
     skills:{
         type:[String]
